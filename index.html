@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sacred Datura — SOM / Playhou.se</title>
+  <meta name="description" content="Sacred Datura: an immersive nighttime installation for Creek Show 2026 celebrating the life cycle of Datura wrightii, by SOM and Playhou.se.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Sacred Datura">
+  <meta property="og:description" content="An immersive nighttime installation for Creek Show 2026, by SOM and Playhou.se.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sacreddatura.art/assets/sacred-datura.jpg">
+  <meta property="og:url" content="https://sacreddatura.art/">
+  <link rel="canonical" href="https://sacreddatura.art/">
+
+  <link rel="preload" as="image" href="assets/sacred-datura.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #f1eff6;
+      --ink-soft: #b9b6c6;
+      --ink-faint: #7d7a8c;
+      --rule: rgba(255, 255, 255, 0.14);
+      --serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+      --sans: "Jost", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
+      --hero-w: min(100vw, 1700px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { background: #000; }
+
+    body {
+      margin: 0;
+      background: #000;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      width: var(--hero-w);
+      margin: 0 auto;
+      padding-top: clamp(0px, 2vw, 32px);
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2925 / 1726;
+      /* soften the left and right edges into the black page */
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+              mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+    }
+
+    .masthead {
+      position: relative;
+      text-align: center;
+      /* sit the title in the dark water below the installation */
+      margin-top: calc(var(--hero-w) * -0.105);
+      padding: 0 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 300;
+      font-size: clamp(2.6rem, 7.4vw, 6.75rem);
+      line-height: 1;
+      letter-spacing: 0.14em;
+      /* optically re-centre: tracking adds space after the last letter */
+      margin-right: -0.14em;
+      text-transform: uppercase;
+      text-shadow: 0 0 42px rgba(150, 160, 255, 0.35);
+    }
+
+    /* ---------- Sections ---------- */
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      padding: clamp(56px, 8vw, 96px) 0;
+      text-align: center;
+    }
+
+    section + section { border-top: 1px solid var(--rule); }
+
+    .label {
+      margin: 0 0 clamp(28px, 4vw, 44px);
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      margin-right: -0.34em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- Logos ---------- */
+
+    .logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 3vw, 30px);
+    }
+
+    .logos a {
+      display: block;
+      border-radius: 2px;
+      opacity: 0.92;
+      transition: opacity 0.3s ease;
+    }
+
+    .logos a:hover { opacity: 1; }
+
+    .logos a:focus-visible,
+    footer a:focus-visible {
+      outline: 1px solid var(--ink-soft);
+      outline-offset: 6px;
+    }
+
+    .logos img {
+      height: clamp(84px, 13vw, 132px);
+      width: auto;
+    }
+
+    /* the Playhou.se mark is a JPG on black; keep it seamless on the page */
+    .logos .playhouse img { mix-blend-mode: lighten; }
+
+    .slash {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(2.6rem, 6vw, 4.25rem);
+      line-height: 1;
+      color: var(--ink-faint);
+      user-select: none;
+    }
+
+    /* ---------- Team ---------- */
+
+    .team {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: clamp(1.3rem, 2.3vw, 1.6rem);
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+    }
+
+    .team li + li { margin-top: 0.85em; }
+
+    .team .cred {
+      margin-left: 0.5em;
+      font-family: var(--sans);
+      font-size: 0.56em;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .team .collab {
+      color: var(--ink-soft);
+      font-size: 0.88em;
+      text-wrap: balance;
+    }
+
+    /* ---------- Statement ---------- */
+
+    .statement p:not(.label) {
+      margin: 0 auto;
+      max-width: 36em;
+      text-align: left;
+      font-size: clamp(1.2rem, 2vw, 1.42rem);
+      line-height: 1.72;
+      color: #dcd9e6;
+      hyphens: manual;
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer {
+      padding: 40px 24px 56px;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover { color: var(--ink); }
+
+    footer .lower { text-transform: none; letter-spacing: 0.16em; }
+
+    /* ---------- Motion ---------- */
+
+    @keyframes bloom {
+      from { opacity: 0; filter: blur(14px) brightness(0.6); }
+      to   { opacity: 1; filter: none; }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* entrance runs only once the browser is actually painting frames (see script) */
+    .animate .hero img { animation: bloom 2.4s ease-out both; }
+    .animate .masthead { animation: rise 1.6s 0.5s ease-out both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate .hero img, .animate .masthead { animation: none; }
+    }
+
+    @media (max-width: 600px) {
+      /* on phones the image is short; let the title sit just below it */
+      .hero {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+                mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+      }
+      /* enlarge the image slightly, trimming only its dark outer margins */
+      .hero img {
+        width: 118%;
+        max-width: none;
+        margin-left: -9%;
+        -webkit-mask-image: none;
+                mask-image: none;
+      }
+      .masthead { margin-top: calc(var(--hero-w) * -0.07); padding: 0 16px; }
+      h1 { font-size: 8vw; letter-spacing: 0.1em; margin-right: -0.1em; white-space: nowrap; }
+    }
+  </style>
+  <script>
+    requestAnimationFrame(function () { document.documentElement.classList.add("animate"); });
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <img src="assets/sacred-datura.jpg" width="2925" height="1726"
+           alt="Rendering of the Sacred Datura installation at night: translucent, iridescent flower forms suspended beneath a bridge, with glowing blossoms projected on the wall behind and reflected in the water below.">
+    </div>
+    <div class="masthead">
+      <h1>Sacred Datura</h1>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="team-label">
+      <p class="label" id="team-label">Artist / Team</p>
+      <div class="logos">
+        <a class="som" href="https://www.som.com/" target="_blank" rel="noopener" aria-label="SOM — som.com">
+          <img src="assets/som-logo-white.png" width="700" height="300" alt="SOM">
+        </a>
+        <span class="slash" aria-hidden="true">/</span>
+        <a class="playhouse" href="https://playhou.se/" target="_blank" rel="noopener" aria-label="Playhou.se Animation — playhou.se">
+          <img src="assets/playhouse-logo.jpg" width="300" height="300" alt="Playhou.se Animation">
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="members-label">
+      <p class="label" id="members-label">Team Members</p>
+      <ul class="team">
+        <li>Richard Gelles</li>
+        <li>Nkiru Gelles<span class="cred">AIA, NOMA</span></li>
+        <li class="collab">Areebah Syed, Emily Kim, Josh Wood, Sean Zhang</li>
+      </ul>
+    </section>
+
+    <section class="statement" aria-labelledby="statement-label">
+      <p class="label" id="statement-label">Artist Statement</p>
+      <p>Our 2026 Creek Show proposal celebrates the life cycle of <em lang="la">Datura wrightii</em> (Sacred Datura or Moon Flower), a herbaceous perennial native to Texas and the Edwards Plateau. Central to the cultural traditions of Indigenous peoples of Texas and uniquely adapted to the region&rsquo;s climate, landscape, and wildlife, it is a charismatic Texas native flora whose story deserves to be told. We propose an immersive installation that reveals its extraordinary botanical beauty through fluid 3D animations depicting an abstracted annual life cycle, highlighting its sculptural stems, buds, flowers, and seed pods. Projected onto the Red River Street bridge and accompanied by glowing dynamic flowers, the installation introduces visitors to this iconic native plant through a memorable nighttime experience.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 <a href="https://www.som.com/" target="_blank" rel="noopener">SOM</a> / <a class="lower" href="https://playhou.se/" target="_blank" rel="noopener">playhou.se</a>
+  </footer>
+
+</body>
+</html>
