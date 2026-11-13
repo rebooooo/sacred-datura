@@ -162,23 +162,11 @@
       letter-spacing: 0.02em;
     }
 
+    .team li { text-wrap: balance; }
+
     .team li + li { margin-top: 0.85em; }
 
-    .team .cred {
-      margin-left: 0.5em;
-      font-family: var(--sans);
-      font-size: 0.56em;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: var(--ink-soft);
-      white-space: nowrap;
-    }
-
-    .team .collab {
-      color: var(--ink-soft);
-      font-size: 0.88em;
-      text-wrap: balance;
-    }
+    .team .nowrap { white-space: nowrap; }
 
     /* ---------- Statement ---------- */
 
@@ -286,9 +274,9 @@
     <section aria-labelledby="members-label">
       <p class="label" id="members-label">Team Members</p>
       <ul class="team">
-        <li>Richard Gelles</li>
-        <li>Nkiru Gelles<span class="cred">AIA, NOMA</span></li>
-        <li class="collab">Areebah Syed, Emily Kim, Josh Wood, Sean Zhang</li>
+        <li>Richard Gelles, <span class="nowrap">Nkiru Gelles AIA NOMA</span></li>
+        <li>Riley Campbell, Joseph Lico, Mardy Hillengas, Giuliano Pairone</li>
+        <li>Areebah Syed, Emily Kim, Josh Wood, Sean Zhang</li>
       </ul>
     </section>
 
